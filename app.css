@@ -169,11 +169,104 @@ section.plan {
   width: 20px;
   height: 20px;
 }
+
+section.card {
+  display: flex;
+  width: 800px;
+  padding: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  border-radius: 18px;
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05);
+}
+
+.setup-guide-container {
+  display: flex;
+  padding: 8px;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.setup-guide {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.setup-guide-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.setup-guide-title {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.setup-guide-instruction {
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.setup-guide-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.setup-guide-progress label {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 130%;
+}
+.setup-guide-progress .setup-progress {
+  position: relative;
+  width: 72px;
+  height: 4px;
+  background-color: var(--font-light);
+  border-radius: 28px;
+}
+
+.setup-progress div {
+  background-color: var(--grey-g-300);
+  position: absolute;
+  line-height: inherit;
+  width: 25%;
+  height: 100%;
+  border-radius: 28px 0px 0px 28px;
+}
+
+div.close-setup {
+  display: flex;
+  padding: 4px;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.close-setup {
+  width: 20px;
+  height: 20px;
+}
 /* Utility classes */
 
 /* Background color */
 .dark {
   background-color: var(--grey-16);
+}
+
+.light {
+  background-color: var(--secondary);
 }
 
 .grey-50 {
