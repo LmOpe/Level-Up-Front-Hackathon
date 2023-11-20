@@ -9,6 +9,7 @@
   --font-dark: #475467;
   --stroke-s-200: #616161;
   --stroke-s-100: #e1e1e1;
+  --stroke-light-100: rgba(255, 255, 255, 0.2);
   --stroke-s-50: #ebebeb;
   --grey-g-50: #656266;
   --grey-g-100: #616161;
@@ -114,6 +115,60 @@ body.container {
   justify-content: center;
   align-items: center;
 }
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+section.plan {
+  display: flex;
+  width: 800px;
+  padding: 12px 8px 12px 16px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.plan-text {
+  font-family: Inter;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 140%;
+}
+
+.plan-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.select-plan {
+  display: flex;
+  padding: 6px 12px;
+  align-items: center;
+  gap: 8px;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+.close-btn {
+  display: flex;
+  padding: 6px;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 6px;
+}
+
+.close-btn img {
+  width: 20px;
+  height: 20px;
+}
 /* Utility classes */
 
 /* Background color */
@@ -158,4 +213,73 @@ body.container {
 
 .stroke-50 {
   border: 1px solid var(--stroke-s-50);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  padding: 6px 12px;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.btn-light {
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--secondary);
+  box-shadow: 0px -1px 0px 0px #b5b5b5 inset;
+}
+.btn-light:hover {
+  background: var(--hover);
+}
+
+.btn-light:active {
+  background: var(--hover);
+  box-shadow: 0px 2px 1.5px 0px #e2e2e2 inset;
+}
+
+.btn-light:focus {
+  box-shadow: 0px 0px 0px 3px var(--focused), 0px 0px 0px 1px #fff,
+    0px -1px 0px 0px #b5b5b5 inset;
+}
+
+.btn-dark {
+  border-radius: 6px;
+  border-top: 1.5px solid var(--stroke-light-100);
+  border-right: 1.5px solid var(var(--stroke-light-100));
+  border-left: 1.5px solid var(var(--stroke-light-100));
+  background: #404040;
+  box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333,
+    0px 2px 0px 0px #000;
+}
+.btn-dark:hover {
+  background: #2a2a2a;
+}
+
+.btn-dark:active {
+  background: #2b2b2b;
+  box-shadow: 0px 0px 0px 1.5px #333, 0px 3px 0px 0px #000 inset;
+}
+
+.btn-dark:focus {
+  box-shadow: 0px 0px 0px 5px var(--focused), 0px 0px 0px 3px #fff,
+    0px 0px 0px 1.5px #333;
+}
+
+.btn-no-outline {
+  border-radius: 6px;
+}
+
+.btn-no-outline:hover {
+  background: #e7e7e7;
+}
+
+.btn-no-outline:active {
+  background: #e0e0e0;
+}
+
+.btn-no-outline:focus {
+  border: 2px solid var(--focused);
+  background: #fff;
 }
