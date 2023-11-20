@@ -45,9 +45,75 @@ body.container {
 }
 
 .brand {
+  width: 104.868px;
+  height: 30px;
   cursor: pointer;
 }
 
+.search-bar-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar {
+  gap: 6px;
+  width: 480px;
+  height: 32px;
+  padding: 8px;
+  display: flex;
+  font-family: Inter;
+  color: var(--grey-g-100);
+  align-items: center;
+  background-image: url(assets/SearchMinor.svg);
+  background-repeat: no-repeat;
+  background-position: 10px;
+  padding-left: 40px;
+  border-radius: 8px;
+}
+
+.right-elem {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1 0 0;
+}
+
+.notification {
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+}
+
+.my-store {
+  display: flex;
+  padding: 2px 2px 2px 8px;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 130%;
+  align-items: center;
+  border-radius: 8px;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  height: 28px;
+  border-radius: 6px;
+  background: #36fba1;
+  color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  padding: 9px 5px 10px 5px;
+  justify-content: center;
+  align-items: center;
+}
 /* Utility classes */
 
 /* Background color */
@@ -83,13 +149,13 @@ body.container {
 
 /* Outlines */
 .stroke-100 {
-  outline-color: var(--stroke-s-100);
+  border: 1px solid var(--stroke-s-100);
 }
 
 .stroke-200 {
-  outline-color: var(--stroke-s-200);
+  border: 1px solid var(--stroke-s-200);
 }
 
 .stroke-50 {
-  outline-color: var(--stroke-s-50);
+  border: 1px solid var(--stroke-s-50);
 }
