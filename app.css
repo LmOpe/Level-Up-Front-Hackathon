@@ -362,6 +362,16 @@ div.close-setup {
   flex: 1 0 0;
 }
 
+.choice-btn {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.choice-btn div:last-of-type {
+  font-size: 12px;
+}
+
 /* Utility classes */
 
 /* Background color */
@@ -430,6 +440,9 @@ div.close-setup {
 }
 
 /* Buttons */
+button {
+  border: none;
+}
 .btn {
   display: inline-flex;
   padding: 6px 12px;
@@ -460,9 +473,9 @@ div.close-setup {
 
 .btn-dark {
   border-radius: 6px;
-  border-top: 1.5px solid var(--stroke-light-100);
-  border-right: 1.5px solid var(var(--stroke-light-100));
-  border-left: 1.5px solid var(var(--stroke-light-100));
+  border-top: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.2));
+  border-right: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.2));
+  border-left: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.2));
   background: #404040;
   box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333,
     0px 2px 0px 0px #000;
@@ -477,7 +490,7 @@ div.close-setup {
 }
 
 .btn-dark:focus {
-  box-shadow: 0px 0px 0px 5px var(--focused), 0px 0px 0px 3px #fff,
+  box-shadow: 0px 0px 0px 5px #005bd3, 0px 0px 0px 3px #fff,
     0px 0px 0px 1.5px #333;
 }
 
@@ -497,7 +510,11 @@ div.close-setup {
   border: 2px solid var(--focused);
   background: #fff;
 }
+/* Cursor */
 
+.cursor-p {
+  cursor: pointer;
+}
 /* Media Queries */
 
 @media (max-width: 640px) {
@@ -598,5 +615,15 @@ div.close-setup {
 
   section.card {
     width: 390px;
+    align-items: flex-end;
+    align-self: stretch;
+  }
+
+  .left-item {
+    display: none;
+  }
+
+  .choice-detail a {
+    display: inline-flex;
   }
 }
