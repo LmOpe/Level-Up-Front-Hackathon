@@ -65,6 +65,15 @@ body.container {
   align-items: center;
 }
 
+.search-bar:hover {
+  border: 1px solid var(--stroke-s-100);
+}
+
+.search-bar:active,
+.search-bar:focus {
+  border: 2px solid var(--secondary);
+}
+
 .search-bar {
   gap: 6px;
   width: 480px;
@@ -89,6 +98,22 @@ body.container {
   flex: 1 0 0;
 }
 
+.notification:hover,
+.my-store:hover {
+  background-color: var(--font-mid);
+}
+
+.notification:active,
+.notification:focus,
+.my-store:active,
+.my-store:focus {
+  background: var(--grey-g-50);
+}
+
+.notification:focus,
+.my-store:focus {
+  box-shadow: 0px 0px 0px 3px var(--focused), 0px 0px 0px 1px #000;
+}
 .notification {
   border-radius: 8px;
   display: flex;
@@ -264,11 +289,27 @@ div.close-setup {
   align-items: flex-start;
   gap: 8px;
   cursor: pointer;
-}
-
-.close-setup {
   width: 20px;
   height: 20px;
+}
+
+.close {
+  border-radius: 6px;
+}
+
+.close:hover,
+.open:hover {
+  background: var(--hover);
+}
+
+.close:active,
+.open:active {
+  background: var(--pressed);
+}
+
+.close:focus,
+.open:focus {
+  border: 2px solid var(--focused);
 }
 
 .setup-guide-choices {
@@ -376,7 +417,7 @@ div.close-setup {
 .dashboard {
   top: 65px;
   right: 16px;
-  z-index: 2;
+  z-index: 4;
   display: flex;
   width: 320px;
   padding: 6px 0px;
@@ -428,7 +469,7 @@ div.close-setup {
 .dashboard-logo-text {
   color: rgba(0, 0, 0, 0.4);
   text-align: center;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-size: 10.5px;
   font-style: normal;
   font-weight: 500;
@@ -442,6 +483,18 @@ div.close-setup {
   gap: 8px;
   align-self: stretch;
   border-radius: 8px;
+}
+
+.all-stores:hover {
+  background: var(--hover);
+}
+
+.all-stores:active {
+  background: var(--pressed);
+}
+
+.all-stores:focus {
+  border: 2px solid var(--focused);
 }
 
 .store-icon {
@@ -475,7 +528,9 @@ div.close-setup {
   border-radius: 8px;
 }
 
-.dropdown-lists:focus {
+.dropdown-lists:focus,
+.manage-acct:focus,
+.log-out:focus {
   border: 2px solid var(--focused);
 }
 
@@ -490,7 +545,7 @@ div.close-setup {
 }
 
 .mail {
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 130%;
@@ -507,6 +562,58 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.notification-dropdown {
+  top: 65px;
+  right: 16px;
+  z-index: 2;
+  position: absolute;
+  display: inline-flex;
+  padding: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  border-radius: 14px;
+  background: var(--secondary);
+  /* Drop Shadow */
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+}
+
+.alert-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+
+.alert-text {
+  font-size: 14px;
+}
+
+.alert-icons {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.alert-icons img:last-of-type:focus {
+  border: 1px solid var(--focused);
+}
+
+.alerts {
+  display: flex;
+  padding: 16px;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--hover);
+}
+
+.close-setup .open,
+.dashboard,
+.notification-dropdown {
+  display: none;
+}
+
 /* Utility classes */
 
 /* Background color */
@@ -546,7 +653,7 @@ a {
 
 /* Font Sizes */
 .text-13-md {
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
@@ -554,7 +661,7 @@ a {
 }
 
 .text-13-sb {
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-style: normal;
   font-weight: 600;
@@ -760,5 +867,14 @@ button {
 
   .choice-detail a {
     display: inline-flex;
+  }
+
+  .notification-dropdown {
+    width: 358px;
+  }
+
+  .alert-detail {
+    flex: 1 0 0;
+    text-align: center;
   }
 }

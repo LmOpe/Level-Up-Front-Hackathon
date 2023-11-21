@@ -20,10 +20,10 @@
         </form>
         <div class="menu">
             <div class="right-elem">
-                <div class="notification grey-200">
+                <div tabindex="1" class="notification grey-200">
                     <img class="font-light" src="assets/Icons.svg" alt="Notification Icon">
                 </div>
-                <div class="my-store grey-200 font-light">
+                <div tabindex="1" class="my-store grey-200 font-light">
                     <span class="my-store-text">
                         Muhammed Collections
                     </span>
@@ -45,7 +45,7 @@
                 </div>
                 <img src="assets/check.svg" alt="Check Icon">
             </div>
-            <div class="all-stores font-dark">
+            <div tabindex="0" class="all-stores font-dark">
                 <div class="store-icon">
                     <img src="assets/StoreMinor.svg" alt="Store Icon">
                     <a href="admin.shopify.com"></a>
@@ -89,17 +89,31 @@
                 <div class="name text-13-md"><a href="admin.shopify.com">Muhammed Lawal</a></div>
                 <div class="mail font-mid"><a href="admin.shopify.com">lawalmuhammed44@gmail.com</a></div>
             </li>
-            <li class="manage-acct">
+            <li tabindex="0" class="manage-acct">
                 <div class="acct-text text-13-sb">
                     <a href="admin.shopify.com">Manage account</a>
                 </div>
             </li>
-            <li class="log-out">
+            <li tabindex="0" class="log-out">
                 <div class="log-out-text">
                     <a href="admin.shopify.com">Log out</a>
                 </div>
             </li>
         </ul>
+    </aside>
+    <aside class="notification-dropdown stroke-50">
+        <div class="alert-top">
+            <div class="text-13-sb font-dark alert-text">Alerts</div>
+            <div class="alert-icons">
+                <img src="assets/FilterMajor.svg" alt="Filter Major">
+                <img tabindex="0" src="assets/CircleTickMajor.svg" alt="Check mark">
+            </div>
+        </div>
+        <div class="alerts font-mid">
+            <div class="alert-detail text-13-sb">
+                Alerts about your store and account will show here
+            </div>
+        </div>
     </aside>
     <main class="main-container">
         <section class="plan grey-300">
@@ -132,12 +146,13 @@
                     <div class="setup-guide-progress">
                         <label for="setup-progress"> 1 / 5 completed</label>
                         <div id="setup-progress" class="setup-progress">
-                            <div></div>
+                            <div class="progress-value"></div>
                         </div>
                     </div>
                 </div>
                 <div class="close-setup">
-                    <img src="assets/Chevron down.svg" alt="Close setup">
+                    <img tabindex="0" class="open" src="assets/Chevron down.svg" alt="Open setup">
+                    <img tabindex="0" class="close" src="assets/Chevron up.svg" alt="Close Setup">
                 </div>
             </div>
             <div class="setup-guide-choices">
