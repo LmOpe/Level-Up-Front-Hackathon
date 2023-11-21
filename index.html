@@ -10,19 +10,22 @@
 
 <body class="container">
     <header class="nav-bar dark">
-        <div class="brand">
-            <img src="assets/Group.svg" alt="Shopify logo">
-        </div>
-        <form class="search-bar-form">
-            <input class="search-bar stroke-200 grey-200" type="text" placeholder="Search">
-        </form>
+            <div class="brand">
+                <a class="logo-desktop" href="https://www.shopify.com/"> <img src="assets/Group.svg" alt="Shopify logo"></a>
+                <a class="logo-mobile" href="https://www.shopify.com/"> <img src="assets/Shopify.com svg.svg" alt="Shopify logo"></a>
+            </div>
+            <form class="search-bar-form">
+                <input class="search-bar stroke-200 grey-200" type="text" placeholder="Search">
+            </form>
         <div class="menu">
             <div class="right-elem">
                 <div class="notification grey-200">
                     <img class="font-light" src="assets/Icons.svg" alt="Notification Icon">
                 </div>
                 <div class="my-store grey-200 font-light">
-                    Muhammed Collections
+                    <span class="my-store-text">
+                        Muhammed Collections
+                    </span>
                     <div class="logo">MC</div>
                 </div>
             </div>
@@ -32,12 +35,15 @@
         <section class="plan grey-300">
             <div class="plan-text font-light">
                 Extend your trial for $1/month for 3 months on select plans.
+                <div class="btn close-btn close-btn-mobile" id="close-btn"><img src="assets/close-btn.svg" alt="Close button"></div>
             </div>
             <div class="plan-buttons">
-                <div class="btn btn-light select-plan font-dark">
-                    Select a plan
-                </div>
-                <div class="btn close-btn" id="close-btn"><img src="assets/close-btn.svg" alt="Close button"></div>
+                <a href="https://www.shopify.com/pricing">
+                    <div class="btn btn-light select-plan font-dark">
+                        Select a plan
+                    </div>
+                </a>
+                <div class="btn close-btn close-btn-desktop" id="close-btn"><img src="assets/close-btn.svg" alt="Close button"></div>
             </div>
         </section>
         <section class="card stroke-50 light">
@@ -53,7 +59,9 @@
                     </div>
                     <div class="setup-guide-progress">
                         <label for="setup-progress"> 1 / 5 completed</label>
-                        <div id="setup-progress" class="setup-progress"><div></div></div>
+                        <div id="setup-progress" class="setup-progress">
+                            <div></div>
+                        </div>
                     </div>
                 </div>
                 <div class="close-setup">

@@ -51,7 +51,14 @@ body.container {
   cursor: pointer;
 }
 
+.logo-mobile {
+  width: 32px;
+  height: 32px;
+  display: none;
+}
+
 .search-bar-form {
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,7 +70,7 @@ body.container {
   height: 32px;
   padding: 8px;
   display: flex;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   color: var(--grey-g-100);
   align-items: center;
   background-image: url(assets/SearchMinor.svg);
@@ -94,7 +101,7 @@ body.container {
 .my-store {
   display: flex;
   padding: 2px 2px 2px 8px;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-size: 12px;
   font-weight: 500;
   line-height: 130%;
@@ -133,7 +140,7 @@ section.plan {
 }
 
 .plan-text {
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 500;
   line-height: 140%;
@@ -151,7 +158,7 @@ section.plan {
   padding: 6px 12px;
   align-items: center;
   gap: 8px;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-size: 12px;
   font-weight: 600;
   line-height: 130%;
@@ -170,6 +177,9 @@ section.plan {
   height: 20px;
 }
 
+.plan-text .close-btn-mobile {
+  display: none;
+}
 section.card {
   display: flex;
   width: 800px;
@@ -204,14 +214,14 @@ section.card {
 }
 
 .setup-guide-title {
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 140%;
 }
 
 .setup-guide-instruction {
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
@@ -225,7 +235,7 @@ section.card {
 }
 
 .setup-guide-progress label {
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 130%;
@@ -252,6 +262,7 @@ div.close-setup {
   padding: 4px;
   align-items: flex-start;
   gap: 8px;
+  cursor: pointer;
 }
 
 .close-setup {
@@ -375,4 +386,107 @@ div.close-setup {
 .btn-no-outline:focus {
   border: 2px solid var(--focused);
   background: #fff;
+}
+
+/* Media Queries */
+
+@media (max-width: 640px) {
+  body.container {
+    width: 100vw;
+    max-width: 640px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+  .nav-bar {
+    width: 100vw;
+    display: flex;
+    padding: 12px 16px;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .brand {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo-mobile {
+    display: inline-flex;
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .logo-desktop {
+    display: none;
+  }
+
+  .search-bar-form {
+    width: 240px;
+    display: flex;
+    height: 32px;
+    padding: 8px;
+    align-items: center;
+    gap: 6px;
+    flex: 1 0 0;
+  }
+  .my-store {
+    padding: 2px;
+  }
+
+  .notification {
+    padding: 6px;
+    gap: 8px;
+    align-self: stretch;
+  }
+
+  .my-store,
+  .notification {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .my-store-text {
+    display: none;
+  }
+
+  .logo {
+    padding: 10px 5px 8px 5px;
+  }
+
+  .main-container {
+    width: 390px;
+  }
+
+  section.plan {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+  }
+
+  .plan-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+  }
+
+  .close-btn-desktop {
+    display: none;
+  }
+
+  .plan-text .close-btn-mobile {
+    display: flex;
+    padding: 8px;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  section.card {
+    width: 390px;
+  }
 }
