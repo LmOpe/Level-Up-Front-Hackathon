@@ -6,7 +6,7 @@
   --focused: #005bd3;
   --font-light: #e3e3e3;
   --font-mid: #616161;
-  --font-dark: #475467;
+  --font-dark: #303030;
   --stroke-s-200: #616161;
   --stroke-s-100: #e1e1e1;
   --stroke-light-100: rgba(255, 255, 255, 0.2);
@@ -269,6 +269,99 @@ div.close-setup {
   width: 20px;
   height: 20px;
 }
+
+.setup-guide-choices {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  align-self: stretch;
+}
+
+.choice-open {
+  display: flex;
+  padding: 8px 8px 12px 8px;
+  align-items: center;
+  gap: 96px;
+  align-self: stretch;
+  border-radius: 10px;
+  background-color: #f3f3f3;
+}
+
+.right-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1 0 0;
+}
+
+.select-icon {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+}
+
+.select-icon img {
+  cursor: pointer;
+}
+
+.choice-text {
+  display: flex;
+  padding: 2px 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1 0 0;
+}
+
+.choice-detail {
+  align-self: stretch;
+}
+
+.choice-detail a {
+  font-size: 14px;
+  color: var(--focused);
+  text-decoration: none;
+  display: block;
+}
+
+.left-item {
+  width: 156.145px;
+  height: 120px;
+}
+
+.choice-close {
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  gap: 120px;
+  align-self: stretch;
+}
+
+.choice-close-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1 0 0;
+}
+
+.choice-close-icon {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+}
+
+.choice-close-text {
+  display: flex;
+  padding: 2px 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1 0 0;
+}
+
 /* Utility classes */
 
 /* Background color */
@@ -304,6 +397,23 @@ div.close-setup {
 
 .font-dark {
   color: var(--font-dark);
+}
+
+/* Font Sizes */
+.text-13-md {
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+}
+
+.text-13-sb {
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
 }
 
 /* Outlines */
