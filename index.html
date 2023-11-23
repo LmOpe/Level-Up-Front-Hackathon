@@ -20,10 +20,10 @@
         </form>
         <div class="menu">
             <div class="right-elem">
-                <div tabindex="1" class="notification grey-200">
+                <div tabindex="1" id="notification" class="notification grey-200">
                     <img class="font-light" src="assets/Icons.svg" alt="Notification Icon">
                 </div>
-                <div tabindex="1" class="my-store grey-200 font-light">
+                <div tabindex="1" id="my-store" class="my-store grey-200 font-light">
                     <span class="my-store-text">
                         Muhammed Collections
                     </span>
@@ -32,7 +32,7 @@
             </div>
         </div>
     </header>
-    <aside class="dashboard stroke-50 light">
+    <aside id="dashboard" class="dashboard stroke-50 light">
         <div class="first-item">
             <div class="dropdown-brand">
                 <div class="brand-name font-dark">
@@ -101,7 +101,7 @@
             </li>
         </ul>
     </aside>
-    <aside class="notification-dropdown stroke-50">
+    <aside id="notification-dropdown" class="notification-dropdown stroke-50">
         <div class="alert-top">
             <div class="text-13-sb font-dark alert-text">Alerts</div>
             <div class="alert-icons">
@@ -116,10 +116,10 @@
         </div>
     </aside>
     <main class="main-container">
-        <section class="plan grey-300">
+        <section id="plan" class="plan grey-300">
             <div class="plan-text font-light">
                 Extend your trial for $1/month for 3 months on select plans.
-                <div class="btn close-btn close-btn-mobile" id="close-btn"><img src="assets/close-btn.svg"
+                <div class="btn close-btn close-btn-mobile" id="close-btn-mobile"><img src="assets/close-btn.svg"
                         alt="Close button"></div>
             </div>
             <div class="plan-buttons">
@@ -128,7 +128,7 @@
                         Select a plan
                     </button>
                 </a>
-                <div class="btn close-btn close-btn-desktop" id="close-btn"><img src="assets/close-btn.svg"
+                <div class="btn close-btn close-btn-desktop" id="close-btn-desktop"><img src="assets/close-btn.svg"
                         alt="Close button"></div>
             </div>
         </section>
@@ -144,22 +144,22 @@
                         </div>
                     </div>
                     <div class="setup-guide-progress">
-                        <label for="setup-progress"> 1 / 5 completed</label>
+                        <label for="setup-progress"> <span id="num-of-complete">0</span> / 5 completed</label>
                         <div id="setup-progress" class="setup-progress">
-                            <div class="progress-value"></div>
+                            <div id="progress-value" class="progress-value"></div>
                         </div>
                     </div>
                 </div>
-                <div class="close-setup">
-                    <img tabindex="0" class="open" src="assets/Chevron down.svg" alt="Open setup">
-                    <img tabindex="0" class="close" src="assets/Chevron up.svg" alt="Close Setup">
+                <div id="close-setup" class="close-setup">
+                    <img tabindex="0" id="open" class="open" src="assets/Chevron down.svg" alt="Open setup">
+                    <img tabindex="0" id="close" class="close" src="assets/Chevron up.svg" alt="Close Setup">
                 </div>
             </div>
-            <div class="setup-guide-choices">
-                <div class="choice-close font-dark">
+            <div id="setup-guide-choices" class="setup-guide-choices">
+                <div id="first-choice-close" class="choice-close choice-1 font-dark">
                     <div class="choice-close-container">
                         <div class="choice-close-icon cursor-p">
-                            <img src="assets/Component 14.svg" alt="Select Icon">
+                            <img class="choice-select choice-1" src="assets/Component 14.svg" alt="Select Icon">
                         </div>
                         <div class="choice-close-text">
                             <div class="text-detail text-13-md">
@@ -168,10 +168,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="choice-open">
+                <div id="first-choice" class="choice-open choice-1">
                     <div class="right-item">
                         <div class="select-icon">
-                            <img src="assets/Component 14.svg" alt="Select Icon">
+                            <img class="choice-select choice-1" src="assets/Component 14.svg" alt="Select Icon">
                         </div>
                         <div class="choice-text">
                             <div class="choice-title text-13-sb font-dark">
@@ -191,10 +191,10 @@
                         <img src="assets/Customize your online store.img.png" alt="Choice one illustration">
                     </div>
                 </div>
-                <div class="choice-close font-dark">
+                <div class="choice-close choice-2 font-dark">
                     <div class="choice-close-container">
                         <div class="choice-close-icon cursor-p">
-                            <img src="assets/Component 14.svg" alt="Select Icon">
+                            <img class="choice-select choice-2" src="assets/Component 14.svg" alt="Select Icon">
                         </div>
                         <div class="choice-close-text">
                             <div class="text-detail text-13-md">
@@ -203,10 +203,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="choice-open">
+                <div class="choice-open choice-2">
                     <div class="right-item">
                         <div class="select-icon">
-                            <img src="assets/Component 14.svg" alt="Select Icon">
+                            <img class="choice-select choice-2" src="assets/Component 14.svg" alt="Select Icon">
                         </div>
                         <div class="choice-text">
                             <div class="choice-title text-13-sb font-dark">
@@ -231,10 +231,10 @@
                         <img src="assets/Add your first product.img.png" alt="Add your first product">
                     </div>
                 </div>
-                <div class="choice-close font-dark">
+                <div class="choice-close choice-3 font-dark">
                     <div class="choice-close-container">
                         <div class="choice-close-icon cursor-p">
-                            <img src="assets/Component 14.svg" alt="Select Icon">
+                            <img class="choice-select choice-3" src="assets/Component 14.svg" alt="Select Icon">
                         </div>
                         <div class="choice-close-text">
                             <div class="text-detail text-13-md">
@@ -243,10 +243,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="choice-open">
+                <div class="choice-open choice-3">
                     <div class="right-item">
                         <div class="select-icon">
-                            <img src="assets/Component 14.svg" alt="Select Icon">
+                            <img class="choice-select choice-3" src="assets/Component 14.svg" alt="Select Icon">
                         </div>
                         <div class="choice-text">
                             <div class="choice-title text-13-sb font-dark">
@@ -267,10 +267,10 @@
                         <img src="assets/Add a custom domain.img.png" alt="Choice one illustration">
                     </div>
                 </div>
-                <div class="choice-close font-dark">
+                <div class="choice-close choice-4 font-dark">
                     <div class="choice-close-container">
                         <div class="choice-close-icon cursor-p">
-                            <img src="assets/Component 14.svg" alt="Select Icon">
+                            <img class="choice-select choice-4" src="assets/Component 14.svg" alt="Select Icon">
                         </div>
                         <div class="choice-close-text">
                             <div class="text-detail text-13-md">
@@ -279,10 +279,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="choice-open">
+                <div class="choice-open choice-4">
                     <div class="right-item">
                         <div class="select-icon">
-                            <img src="assets/Component 14.svg" alt="Select Icon">
+                            <img class="choice-select choice-4" src="assets/Component 14.svg" alt="Select Icon">
                         </div>
                         <div class="choice-text">
                             <div class="choice-title text-13-sb font-dark">
@@ -303,10 +303,10 @@
                         <img src="assets/Name your store.img.png" alt="Choice one illustration">
                     </div>
                 </div>
-                <div class="choice-close font-dark">
+                <div class="choice-close choice-5 font-dark">
                     <div class="choice-close-container">
                         <div class="choice-close-icon cursor-p">
-                            <img src="assets/Component 14.svg" alt="Select Icon">
+                            <img class="choice-select choice-5" src="assets/Component 14.svg" alt="Select Icon">
                         </div>
                         <div class="choice-close-text">
                             <div class="text-detail text-13-md">
@@ -315,10 +315,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="choice-open">
+                <div class="choice-open choice-5">
                     <div class="right-item">
                         <div class="select-icon">
-                            <img src="assets/Component 14.svg" alt="Select Icon">
+                            <img class="choice-select choice-5" src="assets/Component 14.svg" alt="Select Icon">
                         </div>
                         <div class="choice-text">
                             <div class="choice-title text-13-sb font-dark">
