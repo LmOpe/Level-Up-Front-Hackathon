@@ -16,97 +16,110 @@
                     alt="Shopify logo"></a>
         </div>
         <form class="search-bar-form">
-            <input class="search-bar stroke-200 grey-200" type="text" placeholder="Search">
+            <input class="search-bar stroke-200 grey-200" type="search" placeholder="Search">
         </form>
         <div class="menu">
             <div class="right-elem">
-                <div tabindex="1" id="notification" class="notification grey-200">
+                <button aria-haspopup="true" aria-expanded="false" aria-controls="notification-dropdown"
+                    id="notification" class="notification grey-200">
                     <img class="font-light" src="assets/Icons.svg" alt="Notification Icon">
-                </div>
-                <div tabindex="1" id="my-store" class="my-store grey-200 font-light">
+                </button>
+                <button aria-haspopup="true" aria-expanded="false" aria-controls="dashboard-menu" id="my-store-btn"
+                    class="my-store grey-200 font-light">
                     <span class="my-store-text">
-                        Muhammed Collections
+                        Davii Collections
                     </span>
-                    <div class="logo">MC</div>
-                </div>
+                    <div class="logo">DC</div>
+                </button>
             </div>
         </div>
     </header>
-    <aside id="dashboard" class="dashboard stroke-50 light">
-        <div class="first-item">
-            <div class="dropdown-brand">
-                <div class="brand-name font-dark">
-                    <div class="dashboard-logo logo">
-                        <div class="dashboard-logo-text">
-                            MC
+    <aside id="dashboard-menu" class="dashboard stroke-50 light" aria-labelledby="my-store-btn" role="menu">
+        <ul>
+            <li class="first-item">
+                <div class="dropdown-brand">
+                    <div class="brand-name font-dark">
+                        <div class="dashboard-logo logo">
+                            <div class="dashboard-logo-text">
+                                DC
+                            </div>
                         </div>
+                        <div class="text-13-sb"> Davii Collections</div>
                     </div>
-                    <div class="text-13-sb"> Muhammed Collections</div>
+                    <img src="assets/check.svg" alt="Check Icon">
                 </div>
-                <img src="assets/check.svg" alt="Check Icon">
-            </div>
-            <div tabindex="0" class="all-stores font-dark">
-                <div class="store-icon">
-                    <img src="assets/StoreMinor.svg" alt="Store Icon">
-                    <a href="admin.shopify.com"></a>
-                </div>
-                <div class="store-text text-13-sb">
-                    <a href="admin.shopify.com">All stores</a>
-                </div>
-            </div>
-        </div>
-        <div class="line"></div>
-        <ul class="second-item font-dark">
-            <li tabindex="0" class="dropdown-lists">
-                <div class="list-text text-13-sb">
-                    <a href="admin.shopify.com">Help Center</a>
-                </div>
+                <a href="admin.shopify.com" role="menuitem" class="all-stores font-dark">
+                    <div class="store-icon">
+                        <img src="assets/StoreMinor.svg" alt="Store Icon">
+                    </div>
+                    <div class="store-text text-13-sb">
+                        All stores
+                    </div>
+                </a>
             </li>
-            <li tabindex="0" class="dropdown-lists">
-                <div class="list-text text-13-sb">
-                    <a href="admin.shopify.com">Changelog</a>
-                </div>
+            <div class="line"></div>
+            <li>
+                <ul class="second-item font-dark">
+                    <li class="dropdown-lists">
+                        <a href="admin.shopify.com" role="menuitem" class="list-text text-13-sb">
+                            Help Center
+                        </a>
+                    </li>
+                    <li class="dropdown-lists">
+                        <a href="admin.shopify.com" role="menuitem" class="list-text text-13-sb">
+                            Changelog
+                        </a>
+                    </li>
+                    <li class="dropdown-lists">
+                        <a href="admin.shopify.com" role="menuitem" class="list-text text-13-sb">
+                            Community forums
+                        </a>
+                    </li>
+                    <li class="dropdown-lists">
+                        <a href="admin.shopify.com" role="menuitem" class="list-text text-13-sb">
+                            Hire a Shopify Partner
+                        </a>
+                    </li>
+                    <li class="dropdown-lists">
+                        <a href="admin.shopify.com" role="menuitem" class="list-text text-13-sb">
+                            Keyboard shortcuts </a>
+                    </li>
+                </ul>
             </li>
-            <li tabindex="0" class="dropdown-lists">
-                <div class="list-text text-13-sb">
-                    <a href="admin.shopify.com">Community forums</a>
-                </div>
-            </li>
-            <li tabindex="0" class="dropdown-lists">
-                <div class="list-text text-13-sb">
-                    <a href="admin.shopify.com">Hire a Shopify Partner</a>
-                </div>
-            </li>
-            <li tabindex="0" class="dropdown-lists">
-                <div class="list-text text-13-sb">
-                    <a href="admin.shopify.com"> Keyboard shortcuts</a>
-                </div>
-            </li>
-        </ul>
-        <div class="line"></div>
-        <ul class="third-item font-dark">
-            <li class="user">
-                <div class="name text-13-md"><a href="admin.shopify.com">Muhammed Lawal</a></div>
-                <div class="mail font-mid"><a href="admin.shopify.com">lawalmuhammed44@gmail.com</a></div>
-            </li>
-            <li tabindex="0" class="manage-acct">
-                <div class="acct-text text-13-sb">
-                    <a href="admin.shopify.com">Manage account</a>
-                </div>
-            </li>
-            <li tabindex="0" class="log-out">
-                <div class="log-out-text">
-                    <a href="admin.shopify.com">Log out</a>
-                </div>
+            <div class="line"></div>
+            <li>
+                <ul class="third-item font-dark">
+                    <li class="user">
+                        <div class="name text-13-md"><a role="menuitem" href="admin.shopify.com">David Micheal</a>
+                        </div>
+                        <div class="mail font-mid"><a role="menuitem"
+                                href="admin.shopify.com">davidmicheal@gmail.com</a></div>
+                    </li>
+                    <li class="manage-acct">
+                        <a href="admin.shopify.com" role="menuitem" class="acct-text  text-13-sb">
+                            Manage account
+                        </a>
+                    </li>
+                    <li class="log-out">
+                        <a href="admin.shopify.com" role="menuitem" class="log-out-text">
+                            Log out
+                        </a>
+                    </li>
+                </ul>
             </li>
         </ul>
     </aside>
-    <aside id="notification-dropdown" class="notification-dropdown stroke-50">
+    <aside role="menu" aria-labelledby="notification" id="notification-dropdown"
+        class="notification-dropdown stroke-50">
         <div class="alert-top">
             <div class="text-13-sb font-dark alert-text">Alerts</div>
             <div class="alert-icons">
-                <img src="assets/FilterMajor.svg" alt="Filter Major">
-                <img tabindex="0" src="assets/CircleTickMajor.svg" alt="Check mark">
+                <button role="menuitem">
+                    <img src="assets/FilterMajor.svg" alt="Filter Major">
+                </button>
+                <button role="menuitem">
+                    <img src="assets/CircleTickMajor.svg" alt="Check mark">
+                </button>
             </div>
         </div>
         <div class="alerts font-mid">
@@ -119,20 +132,20 @@
         <section id="plan" class="plan grey-300">
             <div class="plan-text font-light">
                 Extend your trial for $1/month for 3 months on select plans.
-                <div class="btn close-btn close-btn-mobile" id="close-btn-mobile"><img src="assets/close-btn.svg"
-                        alt="Close button"></div>
+                <button class="btn btn-no-outline close-btn close-btn-mobile" id="close-btn-mobile"><img
+                        src="assets/close-btn.svg" alt="Close button"></button>
             </div>
             <div class="plan-buttons">
-                <a href="https://www.shopify.com/pricing">
-                    <button class="btn btn-light select-plan font-dark">
+                <a class="btn btn-light" href="https://www.shopify.com/pricing">
+                    <span class="select-plan font-dark">
                         Select a plan
-                    </button>
+                    </span>
                 </a>
-                <div class="btn close-btn close-btn-desktop" id="close-btn-desktop"><img src="assets/close-btn.svg"
-                        alt="Close button"></div>
+                <button class="btn close-btn close-btn-desktop btn-no-outline" id="close-btn-desktop"><img
+                        src="assets/close-btn.svg" alt="Close button"></button>
             </div>
         </section>
-        <section class="card stroke-50 light">
+        <section id="card" class="card stroke-50 light">
             <div class="setup-guide-container">
                 <div class="setup-guide  font-dark">
                     <div class="setup-guide-text">
@@ -150,197 +163,221 @@
                         </div>
                     </div>
                 </div>
-                <div id="close-setup" class="close-setup">
-                    <img tabindex="0" id="open" class="open" src="assets/Chevron down.svg" alt="Open setup">
-                    <img tabindex="0" id="close" class="close" src="assets/Chevron up.svg" alt="Close Setup">
-                </div>
+                <button aria-haspopup="true" aria-expanded="true" aria-controls="setup-guide-choices" id="close-setup"
+                    class="close-setup btn-no-outline  cursor-p">
+                    <img id="open" class="open" src="assets/Chevron down.svg" alt="Open setup button">
+                    <img id="close" class="close" src="assets/Chevron up.svg" alt="Close Setup button">
+                </button>
             </div>
-            <div id="setup-guide-choices" class="setup-guide-choices">
-                <div id="first-choice-close" class="choice-close choice-1 font-dark">
-                    <div class="choice-close-container">
-                        <div class="choice-close-icon cursor-p">
-                            <img class="choice-select choice-1" src="assets/Component 14.svg" alt="Select Icon">
-                        </div>
-                        <div class="choice-close-text">
-                            <div class="text-detail text-13-md">
-                                Customize your online store
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="first-choice" class="choice-open choice-1">
-                    <div class="right-item">
-                        <div class="select-icon">
-                            <img class="choice-select choice-1" src="assets/Component 14.svg" alt="Select Icon">
-                        </div>
-                        <div class="choice-text">
-                            <div class="choice-title text-13-sb font-dark">
-                                Customize your online store
-                            </div>
-                            <div class="choice-detail text-13-md font-mid">
-                                Choose a theme and add your logo, colors, and images to reflect your brand. <a
-                                    href="https://help.shopify.com/en/manual/online-store/themes/customizing-themes">Learn
-                                    more</a>
-                            </div>
-                            <button class="btn btn-dark font-light">
-                                Customize theme
+            <ul aria-label="On-boarding Steps" id="setup-guide-choices" class="setup-guide-choices">
+                <li>
+                    <div data-complete="false" id="first-choice-close" class="inactive choice-close choice-1 font-dark">
+                        <div class="choice-close-container">
+                            <button class="btn-no-outline choice-close-icon cursor-p">
+                                <img class="choice-select choice-1" src="assets/Component 14.svg" alt="Select Icon">
+                            </button>
+                            <button class="btn-no-outline choice-close-text">
+                                <div class="text-detail text-13-md">
+                                    Customize your online store
+                                </div>
                             </button>
                         </div>
                     </div>
-                    <div class="left-item">
-                        <img src="assets/Customize your online store.img.png" alt="Choice one illustration">
-                    </div>
-                </div>
-                <div class="choice-close choice-2 font-dark">
-                    <div class="choice-close-container">
-                        <div class="choice-close-icon cursor-p">
-                            <img class="choice-select choice-2" src="assets/Component 14.svg" alt="Select Icon">
-                        </div>
-                        <div class="choice-close-text">
-                            <div class="text-detail text-13-md">
-                                Add your first product
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="choice-open choice-2">
-                    <div class="right-item">
-                        <div class="select-icon">
-                            <img class="choice-select choice-2" src="assets/Component 14.svg" alt="Select Icon">
-                        </div>
-                        <div class="choice-text">
-                            <div class="choice-title text-13-sb font-dark">
-                                Add your first product
-                            </div>
-                            <div class="choice-detail text-13-md font-mid">
-                                Write a description, add photos, and set pricing for the products you plan to sell. <a
-                                    href="https://help.shopify.com/en/manual/products/add-update-products">Learn
-                                    more</a>
-                            </div>
-                            <div class="choice-btn">
+                </li>
+                <li>
+                    <div data-complete="false" id="first-choice" class="randClass choice-open choice-1">
+                        <div class="right-item">
+                            <button class="btn-no-outline select-icon">
+                                <img class="choice-select choice-1" src="assets/Component 14.svg" alt="Select Icon">
+                            </button>
+                            <div class="choice-text">
+                                <div class="choice-title text-13-sb font-dark">
+                                    Customize your online store
+                                </div>
+                                <div class="choice-detail text-13-md font-mid">
+                                    Choose a theme and add your logo, colors, and images to reflect your brand. <a
+                                        href="https://help.shopify.com/en/manual/online-store/themes/customizing-themes">Learn
+                                        more</a>
+                                </div>
                                 <button class="btn btn-dark font-light">
-                                    Add product
-                                </button>
-                                <button class="btn btn-no-outline text-13-sb">
-                                    Import product
+                                    Customize theme
                                 </button>
                             </div>
                         </div>
-                    </div>
-                    <div class="left-item">
-                        <img src="assets/Add your first product.img.png" alt="Add your first product">
-                    </div>
-                </div>
-                <div class="choice-close choice-3 font-dark">
-                    <div class="choice-close-container">
-                        <div class="choice-close-icon cursor-p">
-                            <img class="choice-select choice-3" src="assets/Component 14.svg" alt="Select Icon">
-                        </div>
-                        <div class="choice-close-text">
-                            <div class="text-detail text-13-md">
-                                Add a custom domain
-                            </div>
+                        <div class="left-item">
+                            <img src="assets/Customize your online store.img.png" alt="Choice one illustration">
                         </div>
                     </div>
-                </div>
-                <div class="choice-open choice-3">
-                    <div class="right-item">
-                        <div class="select-icon">
-                            <img class="choice-select choice-3" src="assets/Component 14.svg" alt="Select Icon">
-                        </div>
-                        <div class="choice-text">
-                            <div class="choice-title text-13-sb font-dark">
-                                Add a custom domain
-                            </div>
-                            <div class="choice-detail text-13-md font-mid">
-                                Your current domain is 222219.myshopify.com but you can add a custom domain to help
-                                customers find your online store. <a
-                                    href="https://help.shopify.com/en/manual/domains">Learn
-                                    more</a>
-                            </div>
-                            <button class="btn btn-dark font-light">
-                                Add domain
+                </li>
+                <li>
+                    <div data-complete="false" class="choice-close font-dark choice-2">
+                        <div class="choice-close-container">
+                            <button class="btn-no-outline choice-close-icon cursor-p">
+                                <img class="choice-select choice-2" src="assets/Component 14.svg" alt="Select Icon">
+                            </button>
+                            <button class="btn-no-outline choice-close-text">
+                                <div class="text-detail text-13-md">
+                                    Add your first product
+                                </div>
                             </button>
                         </div>
                     </div>
-                    <div class="left-item">
-                        <img src="assets/Add a custom domain.img.png" alt="Choice one illustration">
+                </li>
+                <li>
+                    <div data-complete="false" class="inactive choice-open choice-2">
+                        <div class="right-item">
+                            <button class="btn-no-outline select-icon">
+                                <img class="choice-select choice-2" src="assets/Component 14.svg" alt="Select Icon">
+                            </button>
+                            <div class="choice-text">
+                                <div class="choice-title text-13-sb font-dark">
+                                    Add your first product
+                                </div>
+                                <div class="choice-detail text-13-md font-mid">
+                                    Write a description, add photos, and set pricing for the products you plan to sell.
+                                    <a href="https://help.shopify.com/en/manual/products/add-update-products">Learn
+                                        more</a>
+                                </div>
+                                <div class="choice-btn">
+                                    <button class="btn btn-dark font-light">
+                                        Add product
+                                    </button>
+                                    <button class="btn btn-no-outline text-13-sb">
+                                        Import product
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-item">
+                            <img src="assets/Add your first product.img.png" alt="Add your first product">
+                        </div>
                     </div>
-                </div>
-                <div class="choice-close choice-4 font-dark">
-                    <div class="choice-close-container">
-                        <div class="choice-close-icon cursor-p">
-                            <img class="choice-select choice-4" src="assets/Component 14.svg" alt="Select Icon">
-                        </div>
-                        <div class="choice-close-text">
-                            <div class="text-detail text-13-md">
-                                Name your store
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="choice-open choice-4">
-                    <div class="right-item">
-                        <div class="select-icon">
-                            <img class="choice-select choice-4" src="assets/Component 14.svg" alt="Select Icon">
-                        </div>
-                        <div class="choice-text">
-                            <div class="choice-title text-13-sb font-dark">
-                                Name your store
-                            </div>
-                            <div class="choice-detail text-13-md font-mid">
-                                Your temporary store name is currently Davii collections. The store name appears in your
-                                admin and your online store. <a
-                                    href="https://help.shopify.com/en/manual/intro-to-shopify/initial-setup/setup-business-settings">Learn
-                                    more</a>
-                            </div>
-                            <button class="btn btn-dark font-light">
-                                Name store
+                </li>
+                <li>
+                    <div data-complete="false" class="choice-close font-dark choice-3">
+                        <div class="choice-close-container">
+                            <button class="btn-no-outline choice-close-icon cursor-p">
+                                <img class="choice-select choice-3" src="assets/Component 14.svg" alt="Select Icon">
+                            </button>
+                            <button class="btn-no-outline choice-close-text">
+                                <div class="text-detail text-13-md">
+                                    Add a custom domain
+                                </div>
                             </button>
                         </div>
                     </div>
-                    <div class="left-item">
-                        <img src="assets/Name your store.img.png" alt="Choice one illustration">
+                </li>
+                <li>
+                    <div data-complete="false" class="inactive choice-open choice-3">
+                        <div class="right-item">
+                            <button class="btn-no-outline select-icon">
+                                <img class="choice-select choice-3" src="assets/Component 14.svg" alt="Select Icon">
+                            </button>
+                            <div class="choice-text">
+                                <div class="choice-title text-13-sb font-dark">
+                                    Add a custom domain
+                                </div>
+                                <div class="choice-detail text-13-md font-mid">
+                                    Your current domain is 222219.myshopify.com but you can add a custom domain to help
+                                    customers find your online store. <a
+                                        href="https://help.shopify.com/en/manual/domains">Learn
+                                        more</a>
+                                </div>
+                                <button class="btn btn-dark font-light">
+                                    Add domain
+                                </button>
+                            </div>
+                        </div>
+                        <div class="left-item">
+                            <img src="assets/Add a custom domain.img.png" alt="Choice one illustration">
+                        </div>
                     </div>
-                </div>
-                <div class="choice-close choice-5 font-dark">
-                    <div class="choice-close-container">
-                        <div class="choice-close-icon cursor-p">
-                            <img class="choice-select choice-5" src="assets/Component 14.svg" alt="Select Icon">
-                        </div>
-                        <div class="choice-close-text">
-                            <div class="text-detail text-13-md">
-                                Set up a payment provider
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="choice-open choice-5">
-                    <div class="right-item">
-                        <div class="select-icon">
-                            <img class="choice-select choice-5" src="assets/Component 14.svg" alt="Select Icon">
-                        </div>
-                        <div class="choice-text">
-                            <div class="choice-title text-13-sb font-dark">
-                                Set up a payment provider
-                            </div>
-                            <div class="choice-detail text-13-md font-mid">
-                                Choose a payment provider to start accepting payments. You’ll need to create an account
-                                with
-                                the payment provider and set it up with your Shopify store. <a
-                                    href="https://help.shopify.com/en/manual/payments">Learn
-                                    more</a>
-                            </div>
-                            <button class="btn btn-dark font-light">
-                                Set up payment
+                </li>
+                <li>
+                    <div data-complete="false" class="choice-close font-dark choice-4">
+                        <div class="choice-close-container">
+                            <button class="btn-no-outline choice-close-icon cursor-p">
+                                <img class="choice-select choice-4" src="assets/Component 14.svg" alt="Select Icon">
+                            </button>
+                            <button class="btn-no-outline choice-close-text">
+                                <div class="text-detail text-13-md">
+                                    Name your store
+                                </div>
                             </button>
                         </div>
                     </div>
-                    <div class="left-item">
-                        <img src="assets/Set up a payment provider.img.png" alt="Choice one illustration">
+                </li>
+                <li>
+                    <div data-complete="false" class="inactive choice-open choice-4">
+                        <div class="right-item">
+                            <button class="btn-no-outline select-icon">
+                                <img class="choice-select choice-4" src="assets/Component 14.svg" alt="Select Icon">
+                            </button>
+                            <div class="choice-text">
+                                <div class="choice-title text-13-sb font-dark">
+                                    Name your store
+                                </div>
+                                <div class="choice-detail text-13-md font-mid">
+                                    Your temporary store name is currently Davii collections. The store name appears in
+                                    your
+                                    admin and your online store. <a
+                                        href="https://help.shopify.com/en/manual/intro-to-shopify/initial-setup/setup-business-settings">Learn
+                                        more</a>
+                                </div>
+                                <button class="btn btn-dark font-light">
+                                    Name store
+                                </button>
+                            </div>
+                        </div>
+                        <div class="left-item">
+                            <img src="assets/Name your store.img.png" alt="Choice one illustration">
+                        </div>
                     </div>
-                </div>
-            </div>
+                </li>
+                <li>
+                    <div data-complete="false" class="choice-close font-dark choice-5">
+                        <div class="choice-close-container">
+                            <button class="btn-no-outline choice-close-icon cursor-p">
+                                <img class="choice-select choice-5" src="assets/Component 14.svg" alt="Select Icon">
+                            </button>
+                            <button class="btn-no-outline choice-close-text">
+                                <div class="text-detail text-13-md">
+                                    Set up a payment provider
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div data-complete="false" class="inactive choice-open choice-5">
+                        <div class="right-item">
+                            <button class="btn-no-outline select-icon">
+                                <img class="choice-select choice-5" src="assets/Component 14.svg" alt="Select Icon">
+                            </button>
+                            <div class="choice-text">
+                                <div class="choice-title text-13-sb font-dark">
+                                    Set up a payment provider
+                                </div>
+                                <div class="choice-detail text-13-md font-mid">
+                                    Choose a payment provider to start accepting payments. You’ll need to create an
+                                    account
+                                    with
+                                    the payment provider and set it up with your Shopify store. <a
+                                        href="https://help.shopify.com/en/manual/payments">Learn
+                                        more</a>
+                                </div>
+                                <button class="btn btn-dark font-light">
+                                    Set up payment
+                                </button>
+                            </div>
+                        </div>
+                        <div class="left-item">
+                            <img src="assets/Set up a payment provider.img.png" alt="Choice one illustration">
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
         </section>
     </main>
     <script src="app.js"></script>
