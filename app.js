@@ -388,19 +388,6 @@ function app() {
                     toggleCard(arrowDownClass, arrowUpClass);
                 }
             })
-
-            choiceOpenCards.forEach((choice, choiceIndex) => {
-                setupGuideChoices.addEventListener('keyup', (event) => {
-                    switch (choiceIndex) {
-                        case (0):
-                            if (event.key === 'ArrowUp' ||
-                                event.key === 'ArrowLeft'){
-                                    choiceCloseButtons.item(4).querySelector('.choice-close-text').focus();
-                                }
-
-                    }
-                })
-            })
         }
     }
     closeSetupBtn.addEventListener('click', handleCloseSetupButtonpress);
