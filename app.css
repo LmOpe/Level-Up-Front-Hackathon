@@ -1011,6 +1011,7 @@ button {
 
   .notification-dropdown {
     width: 358px;
+    right: unset;
   }
 
   .alert-detail {
