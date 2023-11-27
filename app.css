@@ -87,9 +87,9 @@ body.container {
   padding: 8px;
   display: flex;
   font-family: "Inter", sans-serif;
-  color: var(--grey-g-100);
+  color: var(--secondary);
   align-items: center;
-  background-image: url(assets/SearchMinor.svg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 13 14' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.82264 10.3833C7.89957 11.0841 6.74835 11.5 5.5 11.5C2.46243 11.5 0 9.03757 0 6C0 2.96243 2.46243 0.5 5.5 0.5C8.53757 0.5 11 2.96243 11 6C11 7.24835 10.5841 8.39957 9.8833 9.32264L12.7803 12.2197C13.0732 12.5126 13.0732 12.9874 12.7803 13.2803C12.4874 13.5732 12.0126 13.5732 11.7197 13.2803L8.82264 10.3833ZM9.5 6C9.5 8.20914 7.70914 10 5.5 10C3.29086 10 1.5 8.20914 1.5 6C1.5 3.79086 3.29086 2 5.5 2C7.70914 2 9.5 3.79086 9.5 6Z' fill='%23fff'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: 10px;
   padding-left: 40px;
@@ -130,6 +130,13 @@ body.container {
   height: 32px;
 }
 
+.alert-icons button{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 .my-store {
   display: flex;
   padding: 2px 2px 2px 8px;
@@ -164,11 +171,12 @@ body.container {
 
 .plan {
   display: flex;
-  width: 800px;
+  width: 100%;
   padding: 12px 8px 12px 16px;
   justify-content: space-between;
   align-items: center;
   border-radius: 8px;
+  gap: 5px;
 }
 
 .plan-text {
@@ -204,6 +212,14 @@ body.container {
   border-radius: 6px;
 }
 
+.close-btn:focus {
+  border: 4px solid var(--focused);
+}
+
+.close-btn:hover {
+  background-color: var(--grey-g-50);
+}
+
 .close-btn img {
   width: 20px;
   height: 20px;
@@ -214,7 +230,7 @@ body.container {
 }
 section.card {
   display: flex;
-  width: 800px;
+  width: 100%;
   padding: 8px;
   flex-direction: column;
   align-items: flex-start;
@@ -331,7 +347,6 @@ div.close-setup {
   align-self: stretch;
 }
 
-
 .choice-open {
   display: flex;
   padding: 8px 8px 12px 8px;
@@ -340,6 +355,11 @@ div.close-setup {
   align-self: stretch;
   border-radius: 10px;
   background-color: #f3f3f3;
+}
+
+.choice-open:focus {
+  outline: 2px solid var(--focused);
+  offset: 10px;
 }
 
 .right-item {
@@ -353,10 +373,6 @@ div.close-setup {
   display: flex;
   align-items: flex-start;
   gap: 8px;
-}
-
-.select-icon img {
-  cursor: pointer;
 }
 
 .choice-text {
@@ -405,6 +421,78 @@ div.close-setup {
   align-items: flex-start;
   gap: 8px;
   align-self: stretch;
+}
+
+.choice-close-icon,
+.select-icon {
+  background: transparent;
+  border: none;
+  border-radius: 12%;
+
+  height: 30px;
+  width: 30px;
+
+  cursor: pointer;
+
+  border: 2px solid #b2b2b2;
+
+  transition: all 100ms ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes zoom-in-spin {
+  from {
+    transform: scale(0) rotate(270deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner-close,
+.loading-spinner-open {
+  animation-duration: 1000ms;
+  animation-name: spin;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.choice-close-icon:focus .not-completed-icon-close circle,
+.select-icon:focus .not-completed-icon-open circle {
+  fill: #d9d9d9;
+  stroke-dasharray: 0 0;
+}
+
+.choice-close-icon:hover .not-completed-icon-close circle,
+.select-icon:hover .not-completed-icon-open circle {
+  stroke-dasharray: 0 0;
+}
+
+.completed-icon-close,
+.completed-icon-open {
+  animation-name: zoom-in-spin;
+  animation-duration: 300ms;
+  animation-timing-function: linear;
+}
+
+.choice-close-icon:focus,
+.select-icon:focus {
+  outline: 2px solid var(--focused);
+  outline-offset: 2px;
 }
 
 .choice-close-text {
@@ -539,8 +627,7 @@ a.list-text,
 .manage-acct,
 .log-out,
 .log-out a,
-.manage-acct a,
-.user a {
+.manage-acct a {
   display: flex;
   padding: 0;
   align-items: center;
@@ -552,7 +639,6 @@ a.list-text,
 a.list-text,
 .log-out a,
 .manage-acct a,
-.user div,
 .user a {
   width: 100%;
   padding: 6px;
@@ -572,7 +658,12 @@ a.list-text:focus,
   border: 2px solid var(--focused);
 }
 
-.user {
+li .user{
+  list-style: none;
+  width: 100%;
+}
+
+.user a{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -580,6 +671,7 @@ a.list-text:focus,
   align-self: stretch;
   border-radius: 8px;
 }
+
 
 .mail {
   font-family: "Inter", sans-serif;

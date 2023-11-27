@@ -19,7 +19,17 @@ function app() {
     const checkBoxButtonsClose = document.querySelectorAll('.choice-close-icon');
     const progressBarValue = document.querySelector('#progress-value');
     const amountCompleted = document.querySelector('#num-of-complete');
+    const notCompletedIconOpen = document.querySelectorAll('.not-completed-icon-open');
+    const completedIconOpen = document.querySelectorAll('.completed-icon-open');
+    const loadingSpinnerIconOpen = document.querySelectorAll('.loading-spinner-open');
+    const notCompletedIconClose = document.querySelectorAll('.not-completed-icon-close');
+    const completedIconClose = document.querySelectorAll('.completed-icon-close');
+    const loadingSpinnerIconClose = document.querySelectorAll('.loading-spinner-close');
+    const setupTabs = setupGuideChoices.querySelectorAll('[role="tab"]');
+    const setupTabPanels = setupGuideChoices.querySelectorAll('[role="tabpanel"]');
+    const checkBoxButtonStatus = document.querySelector('#setup-guide-choices-checkbox-status');
 
+    const HIDDEN_CLASS = 'inactive';
 
     function closeAllCardsOpenAllButtons() {
         choiceOpenCards.forEach(choice => {
@@ -28,13 +38,46 @@ function app() {
         choiceCloseButtons.forEach(choice => {
             choice.style.display = 'flex';
         })
-        function toggleStepComplete(value) {
-            checkBox.firstElementChild.src = 'http://127.0.0.1:3000/assets/Component%2014.svg';
-            checkBoxButtonsOpen.item(checkBoxIndex).firstElementChild.src = 'http://127.0.0.1:3000/assets/Component%2014.svg';
-            openParent.dataset.complete = 'false';
-            closeParent.dataset.complete = 'false';
-        }
     }
+
+    function handleMarkAsNotDone(checkBoxIndex, completedIconCloseOrOpen, notCompletedIconCloseOrOpen, loadingSpinnerIconCloseOrOpen) {
+        completedIconCloseOrOpen.item(checkBoxIndex).classList.add(HIDDEN_CLASS);
+        loadingSpinnerIconCloseOrOpen.item(checkBoxIndex).classList.remove(HIDDEN_CLASS);
+
+        checkBoxButtonStatus.ariaLabel = 'Loading, Please wait...';
+
+        setTimeout(() => {
+            loadingSpinnerIconCloseOrOpen.item(checkBoxIndex).classList.add(HIDDEN_CLASS);
+
+            notCompletedIconCloseOrOpen.item(checkBoxIndex).classList.remove(HIDDEN_CLASS);
+
+            checkBoxButtonsClose.item(checkBoxIndex).ariaLabel =
+                checkBoxButtonsClose.item(checkBoxIndex).ariaLabel.replace('as not done', 'as done');
+            checkBoxButtonsOpen.item(checkBoxIndex).ariaLabel =
+                checkBoxButtonsOpen.item(checkBoxIndex).ariaLabel.replace('as not done', 'as done');
+
+            checkBoxButtonStatus.ariaLabel = `Successfully marked ${checkBoxButtonsClose.item(checkBoxIndex).attributes['aria-label'].value} as not done`;
+        }, 3000);
+    }
+    function handleMarkAsDone(checkBoxIndex, completedIconCloseOrOpen, notCompletedIconCloseOrOpen, loadingSpinnerIconCloseOrOpen) {
+        notCompletedIconCloseOrOpen.item(checkBoxIndex).classList.add(HIDDEN_CLASS);
+        loadingSpinnerIconCloseOrOpen.item(checkBoxIndex).classList.remove(HIDDEN_CLASS);
+
+        checkBoxButtonStatus.ariaLabel = 'Loading, Please wait...';
+
+        setTimeout(() => {
+            loadingSpinnerIconCloseOrOpen.item(checkBoxIndex).classList.add(HIDDEN_CLASS);
+            completedIconCloseOrOpen.item(checkBoxIndex).classList.remove(HIDDEN_CLASS);
+
+            checkBoxButtonsClose.item(checkBoxIndex).ariaLabel =
+                checkBoxButtonsClose.item(checkBoxIndex).ariaLabel.replace('as done', 'as not done');
+            checkBoxButtonsOpen.item(checkBoxIndex).ariaLabel =
+                checkBoxButtonsOpen.item(checkBoxIndex).ariaLabel.replace('as done', 'as not done');
+
+            checkBoxButtonStatus.ariaLabel = `Successfully marked ${checkBoxButtonsClose.item(checkBoxIndex).attributes['aria-label'].value} as done`;
+        }, 3000);
+    }
+
     function handleCheckBoxCloseClick(checkBox, checkBoxIndex) {
         const openParent = checkBoxButtonsOpen.item(checkBoxIndex).parentElement.parentElement;
         const closeParent = checkBox.parentElement.parentElement;
@@ -46,14 +89,14 @@ function app() {
         if (isCompleted) {
             openParent.dataset.complete = 'false';
             closeParent.dataset.complete = 'false';
-            checkBox.firstElementChild.src = 'http://127.0.0.1:3000/assets/Component%2014.svg';
-            checkBoxButtonsOpen.item(checkBoxIndex).firstElementChild.src = 'http://127.0.0.1:3000/assets/Component%2014.svg';
+            handleMarkAsNotDone(checkBoxIndex, completedIconClose, notCompletedIconClose, loadingSpinnerIconClose);
+            handleMarkAsNotDone(checkBoxIndex, completedIconOpen, notCompletedIconOpen, loadingSpinnerIconOpen);
         }
         else {
             openParent.dataset.complete = 'true';
             closeParent.dataset.complete = 'true';
-            checkBox.firstElementChild.src = 'https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg';
-            checkBoxButtonsOpen.item(checkBoxIndex).firstElementChild.src = 'https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg';
+            handleMarkAsDone(checkBoxIndex, completedIconOpen, notCompletedIconOpen, loadingSpinnerIconOpen);
+            handleMarkAsDone(checkBoxIndex, completedIconClose, notCompletedIconClose, loadingSpinnerIconClose);
 
 
             if (isLastCheckBox) {
@@ -112,6 +155,7 @@ function app() {
             }
         })
     }
+
     // Handle checkbox click
     function handleCheckBoxClick(checkBox, checkBoxIndex) {
         const parent = checkBox.parentElement.parentElement;
@@ -124,16 +168,14 @@ function app() {
         if (isCompleted) {
             parent.dataset.complete = 'false';
             closeParent.dataset.complete = 'false';
-            checkBox.firstElementChild.src = 'http://127.0.0.1:3000/assets/Component%2014.svg';
-            checkBoxButtonsClose.item(checkBoxIndex).firstElementChild.src = 'http://127.0.0.1:3000/assets/Component%2014.svg';
-
+            handleMarkAsNotDone(checkBoxIndex, completedIconClose, notCompletedIconClose, loadingSpinnerIconClose);
+            handleMarkAsNotDone(checkBoxIndex, completedIconOpen, notCompletedIconOpen, loadingSpinnerIconOpen);
         }
         else {
             parent.dataset.complete = 'true';
             closeParent.dataset.complete = 'true';
-            checkBox.firstElementChild.src = 'https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg';
-            checkBoxButtonsClose.item(checkBoxIndex).firstElementChild.src = 'https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg';
-
+            handleMarkAsDone(checkBoxIndex, completedIconOpen, notCompletedIconOpen, loadingSpinnerIconOpen);
+            handleMarkAsDone(checkBoxIndex, completedIconClose, notCompletedIconClose, loadingSpinnerIconClose);
 
             // Handle Edge case of The last checkbox
             if (isLastCheckBox) {
@@ -179,12 +221,16 @@ function app() {
                 choiceOpen.style.display = 'flex';
             }
         })
-        choiceCloseButtons.forEach(choice => {
+        choiceCloseButtons.forEach((choice, choiceCloseIndex) => {
             if (!(Array.from(choiceCloseButtons).indexOf(choice) === choiceIndex)) {
                 choice.style.display = 'flex';
+                choiceCloseTextButtons.item(choiceCloseIndex).tabIndex = -1;
+                choiceCloseTextButtons.item(choiceCloseIndex).ariaSelected = 'false';
             }
             else {
                 choice.style.display = 'none';
+                choiceCloseTextButtons.item(choiceCloseIndex).tabIndex = 0;
+                choiceCloseTextButtons.item(choiceCloseIndex).ariaSelected = 'true';
             }
         })
     }
@@ -200,9 +246,70 @@ function app() {
         arrowDown.classList.toggle(arrowDownClass);
         setupGuideChoices.classList.toggle(arrowUpClass);
     }
+
+    function handleSetupTabKeypress(tabIndex, event, tab) {
+        const isLastTab = setupTabs.length - 1 === tabIndex;
+        const isFirstTab = tabIndex === 0;
+
+        const nextTab = setupTabs.item(tabIndex + 1);
+        const prevTab = setupTabs.item(tabIndex - 1);
+
+
+        if (event.key === "ArrowDown" || event.key === "ArrowRight") {
+            console.log(isLastTab, setupTabs.item(0), setupTabs.item(tabIndex), tabIndex)
+            if (isLastTab === true) {
+                if (setupTabs.item(0).attributes['aria-selected'].value === 'true') {
+                    setupTabPanels.item(0).focus()
+                }
+                else {
+                    setupTabs.item(0).focus();
+                }
+            }
+            else {
+                if (setupTabs.item(tabIndex + 1).attributes['aria-selected'].value === 'true') {
+                    setupTabPanels.item(tabIndex + 1).focus()
+                }
+                else {
+                    nextTab.focus();
+                }
+            }
+
+        }
+        else if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
+            if (isFirstTab === true) {
+                console.log("First");
+                if (setupTabs.item(setupTabs.length - 1).attributes['aria-selected'].value === 'true') {
+                    setupTabPanels.item(setupTabs.length - 1).focus()
+                }
+                else {
+                    setupTabs.item(setupTabs.length - 1).focus();
+                }
+            }
+            else {
+                console.log("Not First")
+                if (setupTabs.item(tabIndex - 1).attributes['aria-selected'].value === 'true') {
+                    setupTabPanels.item(tabIndex - 1).focus()
+                }
+                else {
+                    prevTab.focus();
+                }
+            }
+        }
+    }
+
+
+    setupTabs.forEach((tab, tabIndex) => {
+        tab.addEventListener('keyup', function (event) {
+            handleSetupTabKeypress(tabIndex, event, tab);
+        })
+        setupTabPanels.item(tabIndex).addEventListener('keyup', function (event) {
+            handleSetupTabKeypress(tabIndex, event, tab);
+        })
+    })
+
     function handleCloseSetupButtonpress() {
         const isExpanded = closeSetupBtn.attributes['aria-expanded'].value === 'true';
-        const arrowUpClass = 'inactive';
+        const arrowUpClass = HIDDEN_CLASS;
         const arrowDownClass = 'open';
         toggleCard(arrowDownClass, arrowUpClass);
 
@@ -211,8 +318,8 @@ function app() {
         }
         else {
             closeSetupBtn.ariaExpanded = 'true';
-            document.querySelector('#first-choice button').focus();
-            document.querySelector('.choice-close-icon:first-child').focus();
+            choiceOpenCards.item(0).focus();
+            choiceCloseTextButtons.item(0).focus();
 
             // Handle Keyboard navigation
             card.addEventListener('keyup', (event) => {
@@ -225,9 +332,9 @@ function app() {
     closeSetupBtn.addEventListener('click', handleCloseSetupButtonpress);
 
 
-    // Handle click pn dismiss button of the trial callout
+    // Handle click of dismiss button of the trial callout
     function closeCalloutTrial() {
-        callOutTrial.classList.toggle('inactive');
+        callOutTrial.classList.toggle(HIDDEN_CLASS);
     }
     dismissButtons.forEach((dismissBtn) => {
         dismissBtn.addEventListener('click', closeCalloutTrial);
