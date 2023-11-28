@@ -256,7 +256,6 @@ function app() {
 
 
         if (event.key === "ArrowDown" || event.key === "ArrowRight") {
-            console.log(isLastTab, setupTabs.item(0), setupTabs.item(tabIndex), tabIndex)
             if (isLastTab === true) {
                 if (setupTabs.item(0).attributes['aria-selected'].value === 'true') {
                     setupTabPanels.item(0).focus()
@@ -277,7 +276,6 @@ function app() {
         }
         else if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
             if (isFirstTab === true) {
-                console.log("First");
                 if (setupTabs.item(setupTabs.length - 1).attributes['aria-selected'].value === 'true') {
                     setupTabPanels.item(setupTabs.length - 1).focus()
                 }
@@ -286,7 +284,6 @@ function app() {
                 }
             }
             else {
-                console.log("Not First")
                 if (setupTabs.item(tabIndex - 1).attributes['aria-selected'].value === 'true') {
                     setupTabPanels.item(tabIndex - 1).focus()
                 }
